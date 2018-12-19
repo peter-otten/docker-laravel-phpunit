@@ -1,5 +1,8 @@
-FROM php:7.1-alpine
-MAINTAINER Niels van Doorn <n.van.doorn@outlook.com>
+FROM php:7.2-fpm-alpine
+MAINTAINER Peter Otten <peterotten128@hotmai.com>
+
+# Use the default production configuration
+RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
 
 RUN apk --update add git \
   build-base \
