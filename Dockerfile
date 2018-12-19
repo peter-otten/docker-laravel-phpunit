@@ -14,8 +14,10 @@ RUN apk --update add git \
   cyrus-sasl-dev \
   libgsasl-dev
 
-RUN docker-php-ext-install mysqli mbstring pdo pdo_mysql mcrypt tokenizer xml
+RUN docker-php-ext-install mysqli mbstring pdo pdo_mysql tokenizer xml
 RUN pecl channel-update pecl.php.net && pecl install memcached && docker-php-ext-enable memcached
+
+RUN pecl install mcrypt-1.0.1 && docker-php-ext-enable mcrypt
 
 # Memory Limit
 RUN echo "memory_limit=-1" > $PHP_INI_DIR/conf.d/memory-limit.ini
