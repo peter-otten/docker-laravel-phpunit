@@ -1,6 +1,7 @@
 # Docker image for testing Laravel applications with PHPUnit
 
 Inspired by https://github.com/khoanguyen96/dockerfiles
+Inspired by https://github.com/nielsvandoorn/docker-laravel-phpunit
 
 ## Running tests
 Run the following command to run tests within the docker image:
